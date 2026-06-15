@@ -1,0 +1,260 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fff9fa; /* Latar belakang off-white pink super lembut */
+    color: #5c4d50; /* Teks abu-abu kecokelatan gelap agar tetap kontras & mudah dibaca */
+    padding-bottom: 50px;
+}
+
+/* Header */
+header {
+    background-color: #ffe3e8; /* Pink pastel hangat */
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 3px solid #ffb3c1; /* Garis aksen pink stroberi */
+}
+
+header h1 {
+    color: #ff758f; /* Warna judul pink cerah yang manis */
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+header p {
+    color: #a3858a; /* Sub-judul pink keabu-abuan yang soft */
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Container Utama */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Kolom Pencarian */
+.search-container {
+    margin: 20px 0 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 20px;
+    background-color: #ffffff; /* Kotak input putih bersih */
+    border: 2px solid #ffb3c1; /* Bingkai pink pastel */
+    border-radius: 25px;
+    color: #5c4d50;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 179, 193, 0.15);
+}
+
+#search-input:focus {
+    border-color: #ff758f;
+    box-shadow: 0 0 12px rgba(255, 117, 143, 0.4);
+    background-color: #fff5f7; /* Berubah pink tipis saat diketik */
+}
+
+/* Grid Katalog */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Komponen Card Makanan */
+.card {
+    background-color: #ffffff; /* Dasar card putih bersih */
+    border-radius: 16px; /* Sudut melengkung yang lebih lembut */
+    overflow: hidden;
+    border: 1px solid #ffe3e8; /* Bingkai luar tipis transparan pink */
+    box-shadow: 0 6px 16px rgba(255, 179, 193, 0.2); /* Bayangan pink super halus */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(255, 117, 143, 0.35);
+    border-color: #ffb3c1;
+}
+
+.card-image-wrapper {
+    width: 100%;
+    height: 200px;
+    background-color: #ffe5ec; /* Warna placeholder sebelum gambar termuat */
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h3 {
+    color: #ff758f; /* Judul makanan menggunakan warna pink rose */
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #ffccd5; /* Background badge pink pastel muda */
+    color: #c9184a; /* Tulisan badge pink tua agar kontras */
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    align-self: center;
+}
+
+.card p {
+    color: #7a666a;
+    font-size: 0.9rem;
+}
+
+.card p strong {
+    color: #ff758f; /* Menonjolkan asal negara dengan warna pink */
+}
+
+/* Status Loading & Pesan Error */
+.loading-text, .error-text {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #a3858a;
+    margin-top: 20px;
+}
+
+/* --- STYLE MODAL POP-UP DETAIL RESEP (PINK VERSION) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(92, 77, 80, 0.6); /* Background hitam diganti cokelat-pink transparan */
+    backdrop-filter: blur(4px);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #ffffff; /* Isi pop-up putih bersih */
+    margin: 5% auto;
+    padding: 30px;
+    border: 3px solid #ffb3c1;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 650px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(255, 117, 143, 0.25);
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 22px;
+    color: #ffb3c1;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: #ff758f;
+}
+
+.modal-body {
+    color: #5c4d50;
+}
+
+#modal-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 22px;
+    border: 2px solid #ffe3e8;
+}
+
+.modal-body h2 {
+    color: #ff758f;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.modal-divider {
+    border: 0;
+    height: 2px;
+    background: #ffe3e8; /* Garis pembatas pink super tipis */
+    margin: 20px 0;
+}
+
+.modal-body h3 {
+    color: #ff758f;
+    margin: 20px 0 12px 0;
+    font-size: 1.25rem;
+    border-left: 4px solid #ffb3c1; /* Aksen garis vertikal di sebelah judul internal */
+    padding-left: 8px;
+}
+
+.modal-body ul, .modal-body ol {
+    padding-left: 22px;
+    margin-bottom: 15px;
+}
+
+.modal-body li {
+    margin-bottom: 10px;
+    color: #6e5a5e;
+    line-height: 1.6;
+}
+
+/* Kustomisasi Scrollbar Laptop Biar Ikut Berwarna Pink Lucu */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #fff9fa;
+}
+::-webkit-scrollbar-thumb {
+    background: #ffccd5;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ffb3c1;
+}

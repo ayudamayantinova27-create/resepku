@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESEPKU - Katalog Resep Global (TheMealDB API)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>RESEPKU</h1>
+            <p>Katalog Resep dan Cara Memasak Hidangan Dunia Real-Time by Nova Ayu Damayanti (L200240005)</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Cari resep... (Contoh: chicken, beef, cake, pasta)"
+                autocomplete="off"
+            >
+        </div>
+
+        <div id="catalog-container" class="catalog-grid">
+            <p class="loading-text">Mencari resep dari API...</p>
+        </div>
+    </main>
+
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                <img id="modal-img" src="" alt="">
+                <h2 id="modal-title"></h2>
+                <span id="modal-badge" class="badge"></span>
+                <p id="modal-origin"></p>
+                
+                <hr class="modal-divider">
+                
+                <h3>Ingredients / Bahan-Bahan:</h3>
+                <ul id="modal-ingredients"></ul>
+                
+                <h3>Instructions / Langkah Memasak:</h3>
+                <ol id="modal-steps"></ol>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
